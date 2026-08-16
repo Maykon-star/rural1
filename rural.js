@@ -95,6 +95,43 @@ function escondertemp() {
         bloco.classList.add('oculto');
     }
  }
+ function alternarTema() {
+    const body = document.body;
+    const btnTema = document.getElementById('tema');
+    body.classList.toggle('dark-mode');
+    const ehModoEscuro = body.classList.contains('dark-mode');
+    btnTema.innerText = ehModoEscuro ? "Tema Claro" : "Tema Escuro";
+    localStorage.setItem('tema', ehModoEscuro ? 'escuro' : 'claro');
+}
+function carregarTema() {
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo === 'escuro') {
+        document.body.classList.add('dark-mode');
+       if (btnTema) btnTema.innerText = "Tema Claro";
+    }
+}
+document.addEventListener('DOMContentLoaded', carregarTema);
+
+function salvarCampo(campoId) {
+    const elemento = document.getElementById(campoId);
+    if (elemento) {
+        localStorage.setItem(campoId, elemento.value);
+    }
+}
+function carregarCampoSalvo() {
+    const campos = ['input', 'input2', 'input3', 'input4', 'inputp1', 'inputp2', 'inputp3', 'inputp4', 'inputarea', 'inputlargura', 'dist-covas', 'dist_larg', 'sementes_covas'];
+    campos.forEach(campoId => {
+        const valorSalvo = localStorage.getItem(campoId);
+        const elemento = document.getElementById(campoId);
+        if (elemento && valorSalvo !== null) {
+            elemento.value = valorSalvo;
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+ carregarCampoSalvo();
+ carregarTema();
+});
 
 function calcularperimetro() {
     var valor1 = input = document.getElementById('inputp1').value;
