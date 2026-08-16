@@ -12,7 +12,7 @@
     <body>
         <nav class="navbar">
             <button class="btn" id="esconder-temp" onclick="escondertemp()">Esconder previsão</button>
-            <button id="tema" onclick="alternarTema()">Alternar Tema</button>
+            <button class="tema-DN" id="tema" onclick="alternarTema()">Alternar Tema</button>
 
             <ul class="menu-principal">
                 <li class="tem-sub">
@@ -234,7 +234,7 @@
 
    <div class="bloco-previsao" id="bloco-previsao">
     <h2>Previsão do Tempo Agrícola</h2>
-    <button onclick="obterLocalizacao()">📍 Usar Minha Localização</button>
+    <button class="prevtem" onclick="obterLocalizacao()">📍 Usar Minha Localização</button>
     <p id="status-loc"></p>
 
     <!-- Tabela onde os dados vão aparecer -->
