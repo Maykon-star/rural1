@@ -29,9 +29,18 @@ button {
     text-align: center;
 }
 
+:root {
+    --bg-fundo: radial-gradient(circle at center, #39ff14 0%, #1a5c0d 60%, #002200 90%);
+    --cor-texto: #000000;
+}
+body.dark-mode {
+    --bg-fundo: #121212;
+    --cor-texto: #000000;
+}
+
 #resultado, #resultado-sementes, #resultadop, #resultado_conversao, #resultado-simples, #resultado-recomendado, #resultado-veneno {
     width: 50%;
-    background-color: #ffffff;
+    background-color: #0b0b0b;
     border: 2px solid #000000;
     border-radius: 4px;
     padding: 10px;
@@ -50,7 +59,9 @@ body {
     margin: 0;
     padding: 10px 10px;
     min-height: 100vh;
-    background: radial-gradient(circle at center, #39FF14 0%, #1a5c1a 60%, #002200 90%);
+    background:var(--bg-fundo);
+    color: var(--cor-texto);
+    transition: background 0.3s ease, color 0.3s ease;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -156,6 +167,11 @@ input[type=number], input[type=int] {
    margin: 0 auto;
    box-sizing: border-box;
 }
+.item-conteudo, input, button {
+    background: var(--bg-card);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+}
 #map {
      height: 450px;
      width: 300px;
@@ -218,6 +234,9 @@ input[type=number], input[type=int] {
     line-height: 1.5;
     margin: 10px 0;
     font-weight: 500;
+    opacity: 0.9;
+    max-height: 120px;
+    overflow-y: auto;
 }
 .btn {
     max-width: 160px;
