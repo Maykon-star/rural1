@@ -7,7 +7,7 @@
 }
 input[type=int], input[type=number]{
     width: 45%;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     color: black;
     padding: 14px 20px;
     margin: 8px 0;
@@ -35,7 +35,7 @@ button {
 }
 body.dark-mode {
     --bg-fundo: #121212;
-    --cor-texto: #000000;
+    --cor-texto: #ffffff;
 }
 
 #resultado, #resultado-sementes, #resultadop, #resultado_conversao, #resultado-simples, #resultado-recomendado, #resultado-veneno {
