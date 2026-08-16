@@ -1,0 +1,268 @@
+ <HTML>
+  <HEAD>
+   <link rel=stylesheet href=rural.css>
+   <meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
+         <h1 class="titulo1">Eito Digital</h1>
+             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  </HEAD>
+    <body>
+        <nav class="navbar">
+            <button class="btn" id="esconder-temp" onclick="escondertemp()">Esconder previsão</button>
+            
+            <ul class="menu-principal">
+                <li class="tem-sub">
+                    <a href="#">Área</a>
+                    <ul class="sub-menu">
+                        <li><button onclick="mostrarDiv('m²')">Metros quadrados</button></li>
+                        <li><button onclick="mostrarDiv('perimetro')">Perimetros</button></li>
+
+                    </ul>
+                </li>
+                    <li class="tem-sub">
+                        <a href="#">Insumos</a>
+                        <ul class="sub-menu">
+                            <li><button onclick="mostrarDiv('sementes/Mudas')">Sementes/Mudas</button></li>
+                            <li><button onclick="mostrarDiv('adubo')">Adubo</button></li>
+                            <li><button onclick="mostrarDiv('veneno')">Veneno/defencivos</button></li>
+                        </ul>
+                    </li>
+                    <li class="tem-sub">
+                        <a href="#">Volume</a>
+                        <ul class="sub-menu">
+                            <li><button onclick="mostrarDiv('pulverizador')">Pulverizador</button></li>
+                        </ul>
+                    </li>
+                    <li class="tem-sub">
+                        <a href="#">Conversão</a>
+                        <ul class="sub-menu">
+                            <li><button onclick="mostrarDiv('opcoesCom')">conversão de medidas</button></li>
+                        </ul>
+                        </li>
+                    <li class="tem-sub">
+                        <a href="#">Mapa</a>
+                        <ul class="sub-menu">
+                            <li><button onclick="mostrarDiv('mapai')">Mapa interativo</button></li>
+                        </ul>
+                        </li>
+                    <li class="tem-sub">
+                        <a href="#">Loja e Cursos</a>
+                        <ul class="sub-menu">
+                            <li><button onclick="mostrarDiv('loja')">Loja</button></li>
+                            <li><button onclick="mostrarDiv('cursos')">Cursos</button></li>
+                        </ul>
+                        </li>
+            </ul>
+        </nav>
+
+           <div class="item-conteudo oculto" id="opcoesCom">
+              <h2>Conversões de medidas</h2>
+              <button onclick="mostrarInfo()" id="Mais"></button>
+               <P class="item-conteudo oculto info-bloco" id="informacoes">Para converter as medidas, selecione a medida a ser conevertida e logo após selecione a medida para a qual deseja converter.</P>
+                <br>
+               <select id="tipoconversao1" class="campo-estilizado">
+                    <option value="">converter de</option>
+                    <option value="hectaresCom">Hectares</option>
+                    <option value="m2Com">Metros quadrados</option>
+                    <option value="alqueirespCom">alqueires paulistas</option>
+                    <option value="alqueiresMCom">alqueires mineiros</option>
+                </select>
+                 <input type="int" id="inputvalor" class="campo-estilizado" placeholder="Digite o valor">
+
+                <span class="seta">➡️</span>
+
+                 <select id="tipoconversao2" class="campo-estilizado">
+                    <option value="">converter para</option>
+                    <option value="hectaresCom2">Hectares</option>
+                    <option value="m2Com2">Metros quadrados</option>
+                    <option value="alqueirespCom2">alqueires paulista</option>
+                    <option value="alqueiresMCom2">alqueires mineiros</option>
+                </select>
+
+                <br><br>
+                    <button id="resultado_com" onclick="conversao_area()">Converter</button>
+                    <button onclick="limparResultadosConversao()">Limpar</button>
+                    <p id="resultado_conversao"></p>
+                    </div>
+
+        <div class="item-conteudo oculto" id="m²">
+
+            <h2>Calcular áreas</h2>
+            <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
+               <P class="item-conteudo oculto info-bloco" id="informacoes1">Para calcular a área, insira as medidas das bases e alturas (Caso tenha as medidas de apenas uma base e uma altura/largura e comprimento, basta digitar a mesma medida de base e de altura nos dois campos de digitação de valores, se colocar o valor de base na primeiro campo digite o mesmo valor no campo ao lado, da mesma forma no campo de altura).</P>
+                <br>
+
+             <p id="bases"><p id="base">Base</p>
+            <input type=int id="input" placeholder="Base 1">
+            <input type=int id="input2" placeholder="Base 2">
+             </p>
+             <p id="alturas"> <p id="altura">Altura</p>
+            <input type=int id="input3" placeholder="Altura 1">
+             <input type=int id="input4" placeholder="Altura 2">
+              <button id="m²-calcular" onclick="calcular()">Calcular</button>
+                    <button onclick="limparResultados()">Limpar</button>
+                     <p id="resultado"></p>
+             </p>
+             </div>
+
+             <div class="item-conteudo oculto" id="perimetro">
+
+            <h2>Calcular perímetros</h2>
+            <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
+               <P class="item-conteudo oculto info-bloco" id="informacoes2">Para calcular o perímetro, insira as medidas dos lados, a ordem não mudara o resultado.</P>
+                <br>
+
+                <p id="bases"><p id="base">Lado 1</p>
+            <input type=int id="inputp1" placeholder="Lado 1">
+            <input type=int id="inputp2" placeholder="Lado 2">
+                </p>
+                <p id="alturas"> <p id="altura">Lado 2</p>
+            <input type=int id="inputp3" placeholder="Lado 3">
+             <input type=int id="inputp4" placeholder="Lado 4">
+                <button id="perimetro-calcular" onclick="calcularperimetro()">Calcular</button>
+                        <p id="Limpar"><button onclick="limparResultadosp()">Limpar</button></p>
+                         <p id="resultadop"></p>
+                </p>
+                </div>
+
+                <div class="item-conteudo oculto" id="sementes/Mudas">
+
+                    <h2>Calcular sementes/Mudas</h2>
+                    <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
+               <P class="item-conteudo oculto info-bloco" id="informacoes3">Para calcular a quantidade de sementes ou mudas necessárias, insira as medidas da área a ser plantada e as distâncias entre as covas, alem da quantidade de sementes ou mudas por cova.</P>
+                      <br>
+
+                     <div class="sementes-Mudas">
+
+                     <p id="comprimento_area">Comprimento da área a ser plantada</p>
+                     <input type="number" id="inputarea" placeholder="Comprimento em metros">
+
+                     <p id="largura_area">Largura da área a ser plantada</p>
+                     <input type="number" id="inputlargura" placeholder="Largura em metros">
+
+                         <p id="dist_cova_reta">Distância entre covas em (comprimento)</p> 
+                         <input type="number" id="dist-covas" placeholder="distancia das covas">
+
+                          <p id="dist_covas_larg">Distancia entre covas (largura)</p> 
+                          <input type="number" id="dist_larg" placeholder="largura entre covas">
+
+                            <p id="densidade">Sementes/Mudas por cova</p>
+                        <input type="number" id="sementes_covas" placeholder="Sementes por cova">
+
+                        <button id="sementes_Mudas-calcular" onclick="calcularSementes_Mudas()">Calcular</button>
+                            <button onclick="limparResultadosSementes()">Limpar</button>
+                                 <p id="resultado-sementes"></p>
+                     </div> 
+
+                     </div>
+
+  <div class="item-conteudo oculto" id="adubo">
+    <h2>Calcular adubo</h2>
+    <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
+    <P class="item-conteudo oculto info-bloco" id="informacoes4">Para calcular a quantidade de adubo necessária, insira as medidas da área a ser tratada e a dose recomendada, ou selecione o método de cálculo e digite a quantidade de adubo que possui para adubar uma area especifica.</P>
+        <br>
+
+    <select id="metodo-calculo" onchange="alternarModos()">
+    <option value="adubo_area">Calcular por área</option>
+    <option value="adubo_dose">Calcular por dose recomendada</option>
+</select><br>
+
+<input type="number" id="input-adubo-area" placeholder="Tamanho">
+<select id="tipo-medida-area">
+    <option value="hectares">Hectares</option>
+    <option value="metros_quadrados">m²</option>
+</select>
+
+
+<div id="secao-area-simples" style="display:none;">
+    <input type="number" id="dose-simples-valor" placeholder="Quantidade" >
+    <select id="unidade-simples-peso">
+        <option value="kg">kg</option>
+        <option value="g">g</option>
+    </select>
+    <br>
+    <button onclick="calcularAdubo()">Calcular</button>
+    <button onclick="limparResultadosAdubo()">Limpar</button>
+    
+    <p id="Resultado-simples"></p>
+</div>
+
+<div id="secao-dose-rec">
+     <input type="number" id="input-adubo-hectares" placeholder="Dose kg/ha">
+    <input type="number" id="input-adubo-m2" style="display:none;" placeholder="Dose g/m²">
+    
+    <select id="tipo-medida-adubacao" onchange="medidaadubacao()">
+        <option value="kg_por_hectare">kg/ha</option>
+        <option value="g_por_m2">g/m²</option>
+    </select>
+    
+    <br>
+    <button onclick="calcularAdubo()">Calcular</button>
+    <button onclick="limparResultadosAdubo()">Limpar</button>
+    
+    <p id="Resultado-recomendado"></p>
+ </div>
+
+  </div>
+    <div class="item-conteudo oculto" id="veneno">
+    <h2>Calcular veneno/defensivos</h2>
+    <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
+               <P class="item-conteudo oculto info-bloco" id="informacoes5">Para calcular a quantidade de veneno/defensivos necessária, insira as medidas da área a ser tratada e a dose recomendada.</P>
+               <br>
+               
+    <input type="number" id="input-veneno-area" placeholder="Tamanho da área">
+     <select id="tipo-medida-veneno">
+      <option value="hectares">Hectares</option>
+      <option value="metros_quadrados">m²</option>
+     </select>
+
+    <input type="number" id="input-veneno-dose" placeholder="Dose recomendada">
+    <select id="tipo-medida-dose">
+        <option value="l_por_hectare">L/ha</option>
+        <option value="ml_por_m2">ml/m²</option>
+    </select>
+
+    <br>
+    <button onclick="Calcularveneno()">Calcular</button>
+    <button onclick="limparResultadosVeneno()">Limpar</button>
+    <p id="Resultado-veneno"></p>
+  </div>
+
+   <div class="bloco-previsao" id="bloco-previsao">
+    <h2>Previsão do Tempo Agrícola</h2>
+    <button onclick="obterLocalizacao()">📍 Usar Minha Localização</button>
+    <p id="status-loc"></p>
+
+    <!-- Tabela onde os dados vão aparecer -->
+    <table id="tabela-previsao" class="oculto">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Temp. Mín / Máx</th>
+                <th>Chuva (%)</th>
+                <th>Vento (km/h)</th>
+            </tr>
+        </thead>
+        <tbody id="dados-previsao">
+            <!-- Os dados da API entram aqui via JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+
+             <div class="item-conteudo oculto" id="mapai">
+             
+                       <button onclick="focarLocalizacao()" style="margin-bottom: 10px; background: #000; color: #39FF14; border: 1px solid #39FF14; padding: 8px; cursor: pointer; box-shadow: 0 0 5px #39FF14;">
+    📍 Achar Minha Localização
+</button>
+
+<div id="map"></div>
+<p id="area-resultado" class="resultado">Área do mapa: 0.00 hectares</p>
+             </div>
+        
+     <script src=rural.js></script>
+    </body>
+ </HTML>
