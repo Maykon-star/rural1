@@ -4,11 +4,13 @@
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #000000;
+    background-color: var(--cor-card);
+    color: var(--cor-texto)
 }
 input[type=int], input[type=number]{
     width: 45%;
-    background-color: #ffffff !important;
-    color: black;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
     padding: 14px 20px;
     margin: 8px 0;
     border: 2px solid #000000;
@@ -18,8 +20,8 @@ input[type=int], input[type=number]{
 }
 button {
     width: 35%;
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--bg-botao);
+    color: var(--cor-texto);
     padding: 8px 20px;
     margin: 8px 0;
     border: 2px solid #000000;
@@ -32,15 +34,20 @@ button {
 :root {
     --bg-fundo: radial-gradient(circle at center, #39ff14 0%, #1a5c0d 60%, #002200 90%);
     --cor-texto: #000000;
+    --cor-botao: #fff;
+    --cor-card: #fff;
 }
 body.dark-mode {
     --bg-fundo: #121212;
-    --cor-texto: #ffffff;
+    --cor-texto: #fcfcfc;
+    --cor-botao: #333;
+    --cor-card: #1e1e1e;
 }
 
 #resultado, #resultado-sementes, #resultadop, #resultado_conversao, #resultado-simples, #resultado-recomendado, #resultado-veneno {
     width: 50%;
-    background-color: #0b0b0b;
+    color: var(--cor-texto);
+    background-color: var(--cor-card);
     border: 2px solid #000000;
     border-radius: 4px;
     padding: 10px;
@@ -96,8 +103,8 @@ body {
 }
 .menu-principal>li>a {
    display:inline-block;
-   background-color: #ffffff;
-    color: #000000;
+   background-color: var(--cor-card);
+    color: var(--cor-texto);
     text-decoration: none;
     padding: 7px 18px;
     border-radius: 5px;
@@ -152,7 +159,8 @@ body {
 #comprimento_area, #largura_area, #dist_cova_reta, #dist_covas_larg, #densidade {
     font-weight: bold;
     margin-bottom: 5px;
-    background:#efe9e9;
+    background:var(--cor-card);
+    color: var(--cor-texto);
     width: 80%;
     padding: 5px;
     border-radius: 5px;
@@ -170,7 +178,6 @@ input[type=number], input[type=int] {
 .item-conteudo, input, button {
     background: var(--bg-card);
     color: var(--cor-texto);
-    border: 1px solid var(--cor-borda);
 }
 #map {
      height: 450px;
@@ -182,6 +189,10 @@ input[type=number], input[type=int] {
      border: 2px solid #39FF14;
      box-shadow: 0 0 15px #39FF14;
      margin-bottom: 20px;
+}
+.tema-DN {
+    background-color: var(--cor-card);
+    color: var(--cor-texto)
 }
 .bloco-previsao {
     display: flex;
@@ -219,6 +230,10 @@ input[type=number], input[type=int] {
 #tabela-previsao tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+.prevtem {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
 
 .oculto {
     display: none;
@@ -237,6 +252,7 @@ input[type=number], input[type=int] {
     opacity: 0.9;
     max-height: 120px;
     overflow-y: auto;
+    color: var(--cor-texto)
 }
 .btn {
     max-width: 160px;
@@ -246,6 +262,8 @@ input[type=number], input[type=int] {
     right:20px;
     top:20px;
     padding: 10px 20px;
+    background-color: var(--cor-card);
+    color: var(--cor-texto)
 }
 @media (max-width: 768px) {
     .menu-principal {
