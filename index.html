@@ -61,7 +61,7 @@
 
            <div class="item-conteudo oculto" id="opcoesCom">
               <h2>Conversões de medidas</h2>
-              <button onclick="mostrarInfo()" id="Mais"></button>
+              <button onclick="mostrarInfo()" id="Mais">Mais informações</button>
                <P class="item-conteudo oculto info-bloco" id="informacoes">Para converter as medidas, selecione a medida a ser conevertida e logo após selecione a medida para a qual deseja converter.</P>
                 <br>
                <select id="tipoconversao1" class="campo-estilizado">
@@ -73,8 +73,6 @@
                 </select>
                  <input type="int" id="inputvalor" class="campo-estilizado" placeholder="Digite o valor">
 
-                <span class="seta">➡️</span>
-
                  <select id="tipoconversao2" class="campo-estilizado">
                     <option value="">converter para</option>
                     <option value="hectaresCom2">Hectares</option>
@@ -84,8 +82,8 @@
                 </select>
 
                 <br><br>
-                    <button id="resultado_com" onclick="conversao_area()">Converter</button>
-                    <button onclick="limparResultadosConversao()">Limpar</button>
+                    <button class="calc" id="resultado_com" onclick="conversao_area()">Converter</button>
+                    <button class="limp" onclick="limparResultadosConversao()">Limpar</button>
                     <p id="resultado_conversao"></p>
                     </div>
 
@@ -103,8 +101,8 @@
              <p id="alturas"> <p id="altura">Altura</p>
             <input type=int id="input3" placeholder="Altura 1">
              <input type=int id="input4" placeholder="Altura 2">
-              <button id="m²-calcular" onclick="calcular()">Calcular</button>
-                    <button onclick="limparResultados()">Limpar</button>
+              <button class="calc" id="m²-calcular" onclick="calcular()">Calcular</button>
+                    <button class="limp" onclick="limparResultados()">Limpar</button>
                      <p id="resultado"></p>
              </p>
              </div>
@@ -123,8 +121,8 @@
                 <p id="alturas"> <p id="altura">Lado 2</p>
             <input type=int id="inputp3" placeholder="Lado 3">
              <input type=int id="inputp4" placeholder="Lado 4">
-                <button id="perimetro-calcular" onclick="calcularperimetro()">Calcular</button>
-                        <p id="Limpar"><button onclick="limparResultadosp()">Limpar</button></p>
+                <button class="calc" id="perimetro-calcular" onclick="calcularperimetro()">Calcular</button>
+                <button class="limp" onclick="limparResultadosp()">Limpar</button>
                          <p id="resultadop"></p>
                 </p>
                 </div>
@@ -153,8 +151,8 @@
                             <p id="densidade">Sementes/Mudas por cova</p>
                         <input type="number" id="sementes_covas" placeholder="Sementes por cova">
 
-                        <button id="sementes_Mudas-calcular" onclick="calcularSementes_Mudas()">Calcular</button>
-                            <button onclick="limparResultadosSementes()">Limpar</button>
+                        <button class="calc" id="sementes_Mudas-calcular" onclick="calcularSementes_Mudas()">Calcular</button>
+                            <button class="limp" onclick="limparResultadosSementes()">Limpar</button>
                                  <p id="resultado-sementes"></p>
                      </div> 
 
@@ -166,13 +164,13 @@
     <P class="item-conteudo oculto info-bloco" id="informacoes4">Para calcular a quantidade de adubo necessária, insira as medidas da área a ser tratada e a dose recomendada, ou selecione o método de cálculo e digite a quantidade de adubo que possui para adubar uma area especifica.</P>
         <br>
 
-    <select id="metodo-calculo" onchange="alternarModos()">
+    <select class="dubo" id="metodo-calculo" onchange="alternarModos()">
     <option value="adubo_area">Calcular por área</option>
     <option value="adubo_dose">Calcular por dose recomendada</option>
 </select><br>
 
 <input type="number" id="input-adubo-area" placeholder="Tamanho">
-<select id="tipo-medida-area">
+<select class="dubo" id="tipo-medida-area">
     <option value="hectares">Hectares</option>
     <option value="metros_quadrados">m²</option>
 </select>
@@ -180,13 +178,13 @@
 
 <div id="secao-area-simples" style="display:none;">
     <input type="number" id="dose-simples-valor" placeholder="Quantidade" >
-    <select id="unidade-simples-peso">
+    <select class="dubo" id="unidade-simples-peso">
         <option value="kg">kg</option>
         <option value="g">g</option>
     </select>
     <br>
-    <button onclick="calcularAdubo()">Calcular</button>
-    <button onclick="limparResultadosAdubo()">Limpar</button>
+    <button class="calc" onclick="calcularAdubo()">Calcular</button>
+    <button class="limp" onclick="limparResultadosAdubo()">Limpar</button>
     
     <p id="Resultado-simples"></p>
 </div>
@@ -195,14 +193,14 @@
      <input type="number" id="input-adubo-hectares" placeholder="Dose kg/ha">
     <input type="number" id="input-adubo-m2" style="display:none;" placeholder="Dose g/m²">
     
-    <select id="tipo-medida-adubacao" onchange="medidaadubacao()">
+    <select class="dubo" id="tipo-medida-adubacao" onchange="medidaadubacao()">
         <option value="kg_por_hectare">kg/ha</option>
         <option value="g_por_m2">g/m²</option>
     </select>
     
     <br>
-    <button onclick="calcularAdubo()">Calcular</button>
-    <button onclick="limparResultadosAdubo()">Limpar</button>
+    <button class="calc" onclick="calcularAdubo()">Calcular</button>
+    <button class="limp" onclick="limparResultadosAdubo()">Limpar</button>
     
     <p id="Resultado-recomendado"></p>
  </div>
@@ -215,20 +213,20 @@
                <br>
                
     <input type="number" id="input-veneno-area" placeholder="Tamanho da área">
-     <select id="tipo-medida-veneno">
+     <select class="veno" id="tipo-medida-veneno">
       <option value="hectares">Hectares</option>
       <option value="metros_quadrados">m²</option>
      </select>
 
     <input type="number" id="input-veneno-dose" placeholder="Dose recomendada">
-    <select id="tipo-medida-dose">
+    <select class="veno" id="tipo-medida-dose">
         <option value="l_por_hectare">L/ha</option>
         <option value="ml_por_m2">ml/m²</option>
     </select>
 
     <br>
-    <button onclick="Calcularveneno()">Calcular</button>
-    <button onclick="limparResultadosVeneno()">Limpar</button>
+    <button class="calc" onclick="Calcularveneno()">Calcular</button>
+    <button class="limp" onclick="limparResultadosVeneno()">Limpar</button>
     <p id="Resultado-veneno"></p>
   </div>
 
