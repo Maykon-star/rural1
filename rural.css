@@ -288,10 +288,9 @@ input[type=number], input[type=int] {
 }
 @media (max-width: 480px) {
     .menu-principal {
+        flex-direction: column;
+        align-items: stretch;
         width: 100%;
-        gap: 20px;
-        flex-wrap: wrap;
-        flex: 1 1 calc(50%-16px);
     }
     .titulo1 {
         text-align: left;
