@@ -258,7 +258,7 @@ input[type=number], input[type=int] {
     .btn {
         font-size: 11px;
         padding: 4px 5px;
-        top: 10px;
+        top: 5px;
         right: 10px;
     }
 }
