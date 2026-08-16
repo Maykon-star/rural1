@@ -18,8 +18,16 @@ input[type=int], input[type=number]{
     cursor: pointer;
 
 }
+.campo-estilizado, .dubo, .veno, #Mais {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
+.calc, .limp {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
 button {
-    width: 35%;
+    width: 40%;
     background-color: var(--bg-botao);
     color: var(--cor-texto);
     padding: 8px 20px;
@@ -38,7 +46,7 @@ button {
     --cor-card: #fff;
 }
 body.dark-mode {
-    --bg-fundo: #121212;
+    --bg-fundo: radial-gradient(circle at center, #3f3030 0%, #221e1e 60%, #121212 90%);
     --cor-texto: #fcfcfc;
     --cor-botao: #333;
     --cor-card: #1e1e1e;
@@ -54,7 +62,7 @@ body.dark-mode {
 }
 .titulo1 {
     text-align: center;
-    color: #000000;
+    color: var(--cor-texto);
     font-size: 2.5em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 20px;
@@ -130,6 +138,8 @@ body {
     font-size: 14px;
     cursor: pointer;
     text-align: left;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
 }
 
  .sementes-Mudas {
@@ -192,7 +202,11 @@ input[type=number], input[type=int] {
 }
 .tema-DN {
     background-color: var(--cor-card);
-    color: var(--cor-texto)
+    color: var(--cor-texto);
+    max-width: 160px;
+    position: absolute;
+    right:20px;
+    top: 60px;
 }
 .bloco-previsao {
     display: flex;
@@ -233,6 +247,7 @@ input[type=number], input[type=int] {
 .prevtem {
     background-color: var(--cor-card);
     color: var(--cor-texto);
+    width: 30%;
 }
 
 .oculto {
