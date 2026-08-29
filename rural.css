@@ -209,10 +209,11 @@ input[type=number], input[type=int] {
 .tema-DN {
     background-color: var(--cor-card);
     color: var(--cor-texto);
-    max-width: 160px;
+    max-width: 70px;
     position: absolute;
     right:20px;
     top: 60px;
+    justify-items: center;
 }
 .bloco-previsao {
     display: flex;
@@ -276,15 +277,16 @@ input[type=number], input[type=int] {
     color: var(--cor-texto)
 }
 .btn {
-    max-width: 160px;
+    max-width: 70px;
     margin-left: auto;
     display: flex;
     position: absolute;
     right:20px;
     top:20px;
-    padding: 10px 20px;
+    padding: 4px 5px;
     background-color: var(--cor-card);
-    color: var(--cor-texto)
+    color: var(--cor-texto);
+    justify-items: center;
 }
 @media (max-width: 768px) {
     .menu-principal {
