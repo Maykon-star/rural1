@@ -84,7 +84,7 @@ function escondertemp() {
     const btnTema = document.getElementById('tema');
     body.classList.toggle('dark-mode');
     const ehModoEscuro = body.classList.contains('dark-mode');
-    btnTema.innerText = ehModoEscuro ? "Tema Claro" : "Tema Escuro";
+    btnTema.innerText = ehModoEscuro ? "☀️" : "🌙";
     localStorage.setItem('tema', ehModoEscuro ? 'escuro' : 'claro');
 }
 function carregarTema() {
