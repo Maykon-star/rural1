@@ -324,15 +324,14 @@ const btnInstalar = document.getElementById('btn-instalar');
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   eventoInstalacao = e;
-  if (btnInstalar) {
-    btnInstalar.style.display = 'block'; // Ou 'inline-block' / 'flex'
-  }
 });
 
 if (btnInstalar) {
   btnInstalar.addEventListener('click', () => {
     if (eventoInstalacao) {
       eventoInstalacao.prompt();
+    } else {
+      alert('Para instalar: toque nos 3 pontos no canto superior direito do navegador e selecione "Adicionar à tela inicial" ou "Instalar aplicativo".');
     }
   });
 }
