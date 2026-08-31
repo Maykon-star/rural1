@@ -317,21 +317,41 @@ function focarLocalizacao() {
         botao.innerText = estaFechado ? "Menos informações" : "Mais informações";
     }
 }
-
-let eventoInstalacao;
+let eventoInstalacao = null;
 const btnInstalar = document.getElementById('btn-instalar');
 
+// Captura o evento nativo de instalação do PWA
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   eventoInstalacao = e;
+  if (btnInstalar) {
+    btnInstalar.style.display = 'block';
+  }
 });
 
+// Ação ao clicar no botão
 if (btnInstalar) {
-  btnInstalar.addEventListener('click', () => {
+  btnInstalar.addEventListener('click', async () => {
     if (eventoInstalacao) {
+      // Dispara o pop-up oficial do Android/Chrome
       eventoInstalacao.prompt();
+      const { outcome } = await eventoInstalacao.userChoice;
+      
+      if (outcome === 'accepted') {
+        btnInstalar.style.display = 'none';
+      }
+      eventoInstalacao = null;
     } else {
-      alert('Para instalar: toque nos 3 pontos no canto superior direito do navegador e selecione "Adicionar à tela inicial" ou "Instalar aplicativo".');
+      // Fallback caso o navegador já tenha disponibilizado pelo menu nativo
+      alert('Se o instalador não abrir automaticamente, toque nos 3 pontos no topo do Chrome e selecione "Instalar aplicativo".');
     }
   });
 }
+
+// Esconde o botão se o aplicativo já estiver instalado
+window.addEventListener('appinstalled', () => {
+  if (btnInstalar) {
+    btnInstalar.style.display = 'none';
+  }
+  console.log('PWA instalado com sucesso!');
+});
