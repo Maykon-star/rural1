@@ -320,11 +320,11 @@ function focarLocalizacao() {
 
 let eventoInstalacao;
 const btnInstalar = document.getElementById('btn-instalar');
-window.addEventListener('beforinstallprompt', (e) => {
+window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     eventoInstalacao = e;
     if (btnInstalar) {
-        btnInstalar.style.diplay = 'block';
+        btnInstalar.style.display = 'block';
     }
 });
     if (btnInstalar)  {
