@@ -317,10 +317,11 @@ function focarLocalizacao() {
         botao.innerText = estaFechado ? "Menos informações" : "Mais informações";
     }
 }
+
 let eventoInstalacao = null;
 const btnInstalar = document.getElementById('btn-instalar');
 
-// Captura o evento nativo de instalação do PWA
+// Captura o evento nativo de instalação
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   eventoInstalacao = e;
@@ -329,29 +330,27 @@ window.addEventListener('beforeinstallprompt', (e) => {
   }
 });
 
-// Ação ao clicar no botão
+// Ação de clique
 if (btnInstalar) {
   btnInstalar.addEventListener('click', async () => {
     if (eventoInstalacao) {
-      // Dispara o pop-up oficial do Android/Chrome
       eventoInstalacao.prompt();
-      const { outcome } = await eventoInstalacao.userChoice;
-      
-      if (outcome === 'accepted') {
+      const choiceResult = await eventoInstalacao.userChoice;
+      if (choiceResult.outcome === 'accepted') {
         btnInstalar.style.display = 'none';
       }
       eventoInstalacao = null;
     } else {
-      // Fallback caso o navegador já tenha disponibilizado pelo menu nativo
-      alert('Se o instalador não abrir automaticamente, toque nos 3 pontos no topo do Chrome e selecione "Instalar aplicativo".');
+      // Se o Chrome já acionou a instalação sozinho ou se o app já foi baixado
+      alert('A caixa de instalação do aplicativo já foi aberta pelo navegador ou o app já está instalado!');
     }
   });
 }
 
-// Esconde o botão se o aplicativo já estiver instalado
+// Esconde o botão automaticamente após instalar
 window.addEventListener('appinstalled', () => {
   if (btnInstalar) {
     btnInstalar.style.display = 'none';
   }
-  console.log('PWA instalado com sucesso!');
+  console.log('Aplicativo instalado com sucesso!');
 });
