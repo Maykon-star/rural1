@@ -317,3 +317,24 @@ function focarLocalizacao() {
         botao.innerText = estaFechado ? "Menos informações" : "Mais informações";
     }
 }
+
+let eventoInstalacao;
+const btnInstalar = document.getElementById('btn-instalar');
+window.addEventListener('beforinstallprompt', (e) => {
+    e.preventDefault();
+    eventoInstalacao = e;
+    if (btnInstalar) {
+        btnInstalar.style.diplay = 'block';
+    }
+});
+    if (btnInstalar)  {
+        btnInstalar.addEventListener('click', async () => {
+    if (eventoInstalacao) {
+        eventoInstalacao.prompt();
+        const{outcome} = await eventoInstalacao.userChoice;
+        console.log(`Resposta do usuário: ${outcome}`);
+        eventoInstalacao = null;
+        btnInstalar.style.display = 'none';
+    }
+});
+}
