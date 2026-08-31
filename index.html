@@ -269,7 +269,7 @@
      <script src=calculos.js></script>
      <script>
         if ('serviceWorker' in navigator) {
-            navigator.addEventListener('load', () => {
+            window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
                 .then((reg) => console.log('PWA registrado com sucesso!', reg))
                 .catch((err) => console.log('ERRO AO REGISTRAR PWA:', err));
