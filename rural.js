@@ -252,7 +252,7 @@ function focarLocalizacao() {
             const lng = position.coords.longitude;
             console.log("Localizado:", lat, lng);
 
-            map.setView([lat, lng], 30);
+            map.setView([lat, lng], 50);
             
             // Adiciona um marcador que brilha no teu estilo neon
             L.circleMarker([lat, lng], {
