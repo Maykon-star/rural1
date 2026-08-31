@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
     './rural.css',
     './manifest.json',
     './icone-192.png',
-    './icone.512.png',
+    './icone-512.png',
     './calculos.js',
     './rural.js'
 ];
@@ -16,10 +16,10 @@ self.addEventListener('install', (event) => {
         })
     );
 });
-self.addEventlistener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.requewst);
+            return response || fetch(event.request);
         })
     );
 });
