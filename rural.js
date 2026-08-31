@@ -320,21 +320,19 @@ function focarLocalizacao() {
 
 let eventoInstalacao;
 const btnInstalar = document.getElementById('btn-instalar');
+
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    eventoInstalacao = e;
-    if (btnInstalar) {
-        btnInstalar.style.display = 'block';
-    }
+  e.preventDefault();
+  eventoInstalacao = e;
+  if (btnInstalar) {
+    btnInstalar.style.display = 'block'; // Ou 'inline-block' / 'flex'
+  }
 });
-    if (btnInstalar)  {
-        btnInstalar.addEventListener('click', async () => {
+
+if (btnInstalar) {
+  btnInstalar.addEventListener('click', () => {
     if (eventoInstalacao) {
-        eventoInstalacao.prompt();
-        const{outcome} = await eventoInstalacao.userChoice;
-        console.log(`Resposta do usuário: ${outcome}`);
-        eventoInstalacao = null;
-        btnInstalar.style.display = 'none';
+      eventoInstalacao.prompt();
     }
-});
+  });
 }
