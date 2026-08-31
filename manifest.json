@@ -1,7 +1,7 @@
 {
  "name" : "Eito Digital",
  "short_name" : "EitoDigital",
- "start_url" : "/index.html",
+ "start_url" : "./index.html",
  "display" : "standalone",
  "background_color" : "#ffffff",
  "theme_color" : "#2e7d32",
