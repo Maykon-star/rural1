@@ -7,7 +7,9 @@ const ASSETS_TO_CACHE = [
     './icone-192.png',
     './icone-512.png',
     './calculos.js',
-    './rural.js'
+    './rural.js',
+    './privacidade.html',
+    './termos.html'
 ];
 self.addEventListener('install', (event) => {
     event.waitUntil (
