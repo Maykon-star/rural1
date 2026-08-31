@@ -1,5 +1,5 @@
 const CACHE_NAME = 'eito-degital-v1';
-const ASSENTS_TO_CACHE = [
+const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './rural.css',
@@ -12,14 +12,14 @@ const ASSENTS_TO_CACHE = [
 self.addEventListener('install', (event) => {
     event.waitUntil (
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(ASSENTS_TO_CACHE);
+            return cache.addAll(ASSETS_TO_CACHE);
         })
     );
 });
-self.addEvenetlistener('fetch', (event) => {
+self.addEventlistener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || FileSystemDirectoryHandle(event.requewst);
+            return response || fetch(event.requewst);
         })
     );
 });
