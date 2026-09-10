@@ -396,10 +396,10 @@ img {
   display: none !important;
 }
 .navbar .menu-fechado {
-  display: none;
+  display: none !important;
 }
 .navbar .menu-fechado .sub-menu {
-  display: none;
+  display: none !important;
 }
 .rodape-conteudo {
     font-size:100%;
