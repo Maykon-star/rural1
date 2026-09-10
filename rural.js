@@ -318,14 +318,17 @@ function focarLocalizacao() {
     }
 }
 function alternarMenu() {
-  const navbar = document.querySelector('toggle-menu-btn').closest('.navbar');
+  const navbar = document.querySelector('.navbar');
   const conteudoHome = document.getElementById('principal');
 
-    if(navbar.classList.contains('oculto')) {
-        navbar.classList.remove('oculto');
-        conteudoHome.classList.add('oculto');
-    } else {
-        navbar.classList.add('oculto');
-        conteudoHome.classList.remove('oculto');
-    }
+  if (!navbar || !conteudoHome) return;
+
+  // Se a navbar está oculta no momento
+  if (navbar.classList.contains('oculto')) {
+    navbar.classList.remove('oculto');      // Mostra o menu
+    conteudoHome.classList.add('oculto');    // Esconde a home
+  } else {
+    navbar.classList.add('oculto');         // Esconde o menu
+    conteudoHome.classList.remove('oculto'); // Mostra a home
+  }
 }
