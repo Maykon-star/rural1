@@ -360,7 +360,7 @@ input[type=number], input[type=int] {
     .menu-principal {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 5px;
         max-width: 100%;
         margin: 0 auto;
         width: 100%;
