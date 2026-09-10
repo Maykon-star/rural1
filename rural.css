@@ -397,7 +397,7 @@ input[type=number], input[type=int] {
   justify-content: center;
 }
 img {
-    max-width: 50%;
+    max-width: 300px;
     height: auto;
 }
 
