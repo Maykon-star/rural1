@@ -124,6 +124,7 @@ html, body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 .tem-sub {
     display: flex;
