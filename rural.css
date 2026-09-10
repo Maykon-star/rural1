@@ -368,6 +368,13 @@ input[type=number], input[type=int] {
         max-width: 100px;
         box-sizing: border-box;
     }
+    .menu-principal>li, .menu-principal button, .conteudo-principal .card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
     .titulo1 {
         text-align: center;
         margin-left: 40px;
