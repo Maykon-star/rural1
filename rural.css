@@ -112,19 +112,39 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 20px;
     margin-top: 20px;
     padding: 40px;
     list-style: none;
-    max-width: 180px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 .conteudo-principal {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
     box-sizing: border-box;
-    flex-wrap: wrap;
+}
+.conteudo-principal p {
+    width: 100%;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.conteudo-principal h3 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 22px;
+}
+.imagem-principal {
+    max-width:100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px solid #13ea2c;
 }
 .tem-sub {
     display: flex;
@@ -399,6 +419,8 @@ input[type=number], input[type=int] {
 img {
     max-width: 300px;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .navbar.oculto, #principal.oculto {
