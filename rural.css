@@ -358,13 +358,12 @@ input[type=number], input[type=int] {
 }
 @media (max-width: 480px) {
     .menu-principal {
-        flex-direction: column;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-        max-width: 80px;
+        max-width: 100%;
         margin: 0 auto;
-        width: 90%;
+        width: 100%;
         box-sizing: border-box;
         min-width: 20px;
     }
@@ -375,9 +374,11 @@ input[type=number], input[type=int] {
         font-size: 14px;
         border-radius: 5px;
     }
-    .menu-orincipal image{
-        max-width: 80px;
+    .menu-principal img{
+        max-width: 60px;
         height: auto;
+        display: block;
+        margin: 0 auto 4px auto;
     }
     .titulo1 {
         text-align: center;
