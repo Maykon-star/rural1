@@ -74,7 +74,6 @@ body.dark-mode {
     margin-top: 20px;
     width: 100%;
     padding: 1% 0;
-    margin-left: 20px;
 }
 
 body {
@@ -337,7 +336,7 @@ input[type=number], input[type=int] {
         margin-left: 31px;
     }
     .titulo1 {
-        text-align: left;
+        text-align: center;
         margin-left: 40px;
         padding-right: 80px;
         font-size: 2em;
@@ -346,7 +345,7 @@ input[type=number], input[type=int] {
     .btn {
         font-size: 11px;
         padding: 4px 5px;
-        top: 5px;
+        top: 15px;
         right: 10px;
         max-width: 50px;
         align-items: center;
@@ -354,7 +353,7 @@ input[type=number], input[type=int] {
     .tema-DN {
         font-size: 11px;
         padding: 4px 5px;
-        top: 30px;
+        top: 65px;
         right: 10px;
         max-width: 50px;
         align-items: center;
