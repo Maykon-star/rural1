@@ -321,11 +321,11 @@ function alternarMenu() {
   const navbar = document.querySelector('toggle-menu-btn').closest('.navbar');
   const conteudoHome = document.getElementById('principal');
 
-  if (navbar.style.display === 'none' || navbar.classList.contains('oculto')) {
-    navbar.style.display = 'block';
-    conteudoHome.classList.add('oculto');
-  } else {
-    navbar.style.display = 'none';
-    conteudoHome.classList.remove('oculto');
-  }
+    if(navbar.classList.contains('oculto')) {
+        navbar.classList.remove('oculto');
+        conteudoHome.classList.add('oculto');
+    } else {
+        navbar.classList.add('oculto');
+        conteudoHome.classList.remove('oculto');
+    }
 }
