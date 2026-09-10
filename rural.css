@@ -362,7 +362,6 @@ input[type=number], input[type=int] {
         align-items: stretch;
         width: 100%;
         max-width: 200px;
-        margin-left: 31px;
     }
     .titulo1 {
         text-align: center;
