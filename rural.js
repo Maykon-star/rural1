@@ -321,18 +321,11 @@ function alternarMenu() {
   const navbar = document.querySelector('toggle-menu-btn').closest('.navbar');
   const conteudoHome = document.getElementById('principal');
 
-  if (!navbar) return;
-
-  // Alterna a classe 'menu-fechado' na navbar
-  navbar.classList.toggle('menu-fechado');
-
-  const estaFechado = navbar.classList.contains('menu-fechado');
-
-  if (estaFechado) {
-    // MENU FECHADO: Exibe a Home e volta para o ícone de chave
-    if (conteudoHome) conteudoHome.style.display = 'block';
+  if (navbar.style.display === 'none' || navbar.classList.contains('oculto')) {
+    navbar.style.display = 'flex';
+    conteudoHome.classList.add('oculto');
   } else {
-    // MENU ABERTO: Esconde a Home e altera para o ícone da seta
-    if (conteudoHome) conteudoHome.style.display = 'none';
+    navbar.style.display = 'none';
+    conteudoHome.classList.remove('oculto');
   }
 }
