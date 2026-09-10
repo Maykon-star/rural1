@@ -322,7 +322,7 @@ function alternarMenu() {
   const conteudoHome = document.getElementById('principal');
 
   if (navbar.style.display === 'none' || navbar.classList.contains('oculto')) {
-    navbar.style.display = 'flex';
+    navbar.style.display = 'block';
     conteudoHome.classList.add('oculto');
   } else {
     navbar.style.display = 'none';
