@@ -15,13 +15,15 @@
   </HEAD>
     <body>
         <main>
-        <nav class="navbar">
-            <button class="btn" id="esconder-temp" onclick="escondertemp()">🌤️</button>
-            <button class="tema-DN" id="tema" onclick="alternarTema()">☀️/🌙</button>
+             <button class="btn" id="esconder-temp" onclick="escondertemp()">🌤️</button>
+            <button class="tema-DN" id="tema" onclick="alternarTema()">🌙</button>
+            <button id="toggle-menu-btn" class="ferramentas-flutuante" onclick="alternarMenu()" aria-label="Abrir e fechar Menu">🔧
+            </button>
 
+        <nav class="navbar menu-fechado">
             <ul class="menu-principal">
                 <li class="tem-sub">
-                    <a href="#">Área</a>
+                    <a href="#"><img src="imagens/area-icon.png.jpeg" alt="Área">Área</a>
                     <ul class="sub-menu">
                         <li><button onclick="mostrarDiv('m²')">Metros quadrados</button></li>
                         <li><button onclick="mostrarDiv('perimetro')">Perimetros</button></li>
@@ -29,7 +31,7 @@
                     </ul>
                 </li>
                     <li class="tem-sub">
-                        <a href="#">Insumos</a>
+                        <a href="#"><img src="imagens/insumos-icon.png.jpeg" alt="Insumos">Insumos</a>
                         <ul class="sub-menu">
                             <li><button onclick="mostrarDiv('sementes/Mudas')">Sementes/Mudas</button></li>
                             <li><button onclick="mostrarDiv('adubo')">Adubo</button></li>
@@ -43,13 +45,13 @@
                         </ul>
                     </li> -->
                     <li class="tem-sub">
-                        <a href="#">Conversão</a>
+                        <a href="#"><img src="imagens/conversao-icon.png.jpeg" alt="Conversão">Conversão</a>
                         <ul class="sub-menu">
                             <li><button onclick="mostrarDiv('opcoesCom')">conversão de medidas</button></li>
                         </ul>
                         </li>
                     <li class="tem-sub">
-                        <a href="#">Mapa</a>
+                        <a href="#"><img src="imagens/mapa-icon.png.jpeg" alt="Mapa">Mapa</a>
                         <ul class="sub-menu">
                             <li><button onclick="mostrarDiv('mapai')">Mapa interativo</button></li>
                         </ul>
@@ -63,6 +65,15 @@
                         </li>
             </ul>
         </nav>
+
+        <div class="conteudo-principal" id="principal">
+            <h1>Bem-vindo à nossa página!</h1>
+            <p>Explore nossas ferramentas e recursos para facilitar suas atividades no campo.</p>
+            <img src="imagens/rural-imag.png.jpeg" alt="Imagem do campo" class="imagem-principal">
+            <img src="imagens/area-imag.png.jpeg" alt="Imagem de área agrícola" class="imagem-principal">
+            <img src="imagens/insumos-imag.png.jpeg" alt="Imagem de insumos agrícolas" class="imagem-principal">
+            <img src="imagens/mapa-imag.png.jpeg" alt="Imagem de mapa" class="imagem-principal">
+        </div>
 
            <div class="item-conteudo oculto" id="opcoesCom">
               <h2>Conversões de medidas</h2>
