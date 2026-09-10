@@ -387,6 +387,10 @@ input[type=number], input[type=int] {
   align-items: center;
   justify-content: center;
 }
+img {
+    max-width: 30%;
+    height: auto;
+}
 
 .navbar.oculto {
   display: none !important;
