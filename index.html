@@ -20,6 +20,9 @@
             <button id="toggle-menu-btn" class="ferramentas-flutuante" onclick="alternarMenu()" aria-label="Abrir e fechar Menu">
                 <span class="menu-ferras">🔧</span>
             </button>
+            <button class="menuZ" id="menu-toggle" onclick="MenuZ()" aria-label="Abrir e fechar Menu">
+                <span class="menu-icon">☰</span>
+            </button>
 
         <nav class="navbar oculto">
             <ul class="menu-principal">
@@ -67,12 +70,18 @@
             </ul>
         </nav>
 
+        <div class="oculto" id="painel-menu">
+            <ul class="menu-principal">
+                <li><a href="Blog.html">Ártigo & Blog</a></li>
+            </ul>
+        </div>
+
         <div class="conteudo-principal " id="principal">
             <h2>Bem-vindo à nossa página!</h2>
             <p>Explore nossas ferramentas e recursos para facilitar suas atividades no campo.</p>
             <img src="imagens/rural-imag.png.jpeg" alt="Imagem do campo" class="imagem-principal">
             <h3>ferramentas</h3>
-            <p>Ultilize nossas ferramentas para facilitar suas atividades no campo, aqui você encontrará soluções para diversas necessidades.
+            <p>Utilize nossas ferramentas para facilitar suas atividades no campo, aqui você encontrará soluções para diversas necessidades.
                 Algumas das ferramentas incluem: cálculo de áreas, perímetros, sementes/mudas, adubo, veneno/defensivos e conversão de medidas. Além disso, você pode acessar um mapa interativo para visualizar informações geográficas relevantes para suas atividades agrícolas e previsão do tempo agrícola para planejar suas ações de forma mais eficiente.
                 Todas as ferramentas são projetadas para serem intuitivas e fáceis de usar, permitindo que você obtenha resultados precisos e confiáveis, porém é importante lembrar que as ferramentas possuem caráter orientativo, e é sempre recomendável consultar um profissional técnico habilitado para prescrição em laudo.
                 O site funciona offline, garantindo que você possa acessar as informações mesmo em áreas com conectividade limitada.
@@ -93,7 +102,7 @@
             <img src="imagens/insumos-imag.png.jpeg" alt="Imagem de insumos agrícolas" class="imagem-principal">
             <h3>insumos</h3>
             <p>Na ferramenta de insumos, você poderá calcular a quantidade de sementes, fertilizantes ou outros insumos necessários para o plantio, fornecendo as medidas das áreas a serem cultivadas.
-                Para o calculo de smentes/mudas, insira as medidas da área a ser plantada, as distâncias entre as covas e a quantidade de sementes ou mudas por cova. O resultado será a quantidade total de sementes ou mudas necessárias para o plantio.
+                Para o calculo de sementes/mudas, insira as medidas da área a ser plantada, as distâncias entre as covas e a quantidade de sementes ou mudas por cova. O resultado será a quantidade total de sementes ou mudas necessárias para o plantio.
                 Para o calculo de adubo, insira as medidas da área a ser tratada e a dose recomendada, ou selecione o método de cálculo e digite a quantidade de adubo que possui para adubar uma area especifica. O resultado será a quantidade total de adubo necessária para o plantio.
                 Para o calculo de veneno/defensivos, insira as medidas da área a ser tratada e a dose recomendada. O resultado será a quantidade total de veneno/defensivos necessária para o plantio.
             </p>
