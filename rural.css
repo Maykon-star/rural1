@@ -381,8 +381,7 @@ input[type=number], input[type=int] {
         margin: 0 auto 4px auto;
     }
     #painel-menu {
-      max-width: 100px;
-      max-height: 100px;
+      width: 40px;
     }
     .titulo1 {
         text-align: center;
