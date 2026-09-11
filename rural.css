@@ -528,19 +528,36 @@ img {
     border: 2px solid #ffffff;
     border-radius: 8px;
     width: auto;
-    max-width: 80%;
+    max-width: 200px;
     padding: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     height: auto;
-    display: block;
 }
-#painel-menu .menu-principal, .MenuZ .menu-principal{
-   list-style: none;
-   margin: 0;
-    padding: 0;
+/* Container da lista em coluna */
+#painel-menu .menu-principal, 
+.MenuZ .menu-principal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
 }
-#painel-menu .menu-principal li, .MenuZ .menu-principal li {
-    margin-bottom: 6px 0;
+
+/* Cada item ocupando a linha inteira */
+#painel-menu .menu-principal li, 
+.MenuZ .menu-principal li {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Ajuste nos links/botões */
+#painel-menu .menu-principal a, 
+#painel-menu .menu-principal button {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
 }
 #painel-menu .menu-principal a {
     display: block;
