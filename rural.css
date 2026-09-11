@@ -381,7 +381,19 @@ input[type=number], input[type=int] {
         margin: 0 auto 4px auto;
     }
     #painel-menu {
-      width: 40px;
+      width: auto;
+      max-width: 200px;
+      padding: 6px 10px;
+    }
+    #painel-menu .menu-principal li  {
+       width: auto;
+       padding: 0;
+    }
+    #painel-menu .menu-principal a, #painel-menu .menu-principal button {
+        width: auto;
+        font-size: 13px;
+        padding: 6px 8px;
+        white-space: nowrap;
     }
     .titulo1 {
         text-align: center;
