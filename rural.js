@@ -332,3 +332,16 @@ function alternarMenu() {
     conteudoHome.classList.remove('oculto'); // Mostra a home
   }
 }
+function MenuZ() {
+    const painel = document.getElementById('painel-menu');
+    if (painel) {
+        painel.classList.toggle('oculto');
+    }
+}
+document.addEventListener('click', function(event) {
+    const painel = document.getElementById('painel-menu');
+    const botaoMenu = document.getElementById('menu-toggle');
+    if (painel && botaoMenu && !painel.contains(event.target) && !botaoMenu.contains(event.target)) {
+        painel.classList.add('oculto');
+    }
+});
