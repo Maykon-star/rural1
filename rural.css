@@ -391,7 +391,7 @@ input[type=number], input[type=int] {
     }
     #painel-menu .menu-principal a, #painel-menu .menu-principal button {
         width: 80px;
-        font-size: 13px;
+        font-size: 6px;
         padding: 6px 8px;
         white-space: nowrap;
     }
