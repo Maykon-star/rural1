@@ -314,7 +314,7 @@ input[type=number], input[type=int] {
 }
 
 .oculto {
-    display: none;
+    display: none !important;
     transition: all 0.5s ease;
 }
 
@@ -416,7 +416,7 @@ input[type=number], input[type=int] {
 }
 .ferramentas-flutuante {
   position: fixed;
-  top: 15px;
+  top: 65px;
   left: 15px;
   z-index: 9999;
   background-color: var(--cor-card);
@@ -432,6 +432,24 @@ input[type=number], input[type=int] {
   align-items: center;
   justify-content: center;
 }
+  .menuZ {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    }
 img {
     max-width: 300px;
     height: auto;
@@ -483,4 +501,44 @@ img {
 }
 .rodape-base, .rodape-coluna {
     margin-left: 50px;
+}
+
+#painel-menu {
+    position: fixed;
+    top: 21px;
+    left: 70px;
+    z-index: 9999;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    width: auto;
+    max-width: 80%;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    height: auto;
+    display: block;
+}
+#painel-menu .menu-principal, .MenuZ .menu-principal{
+   list-style: none;
+   margin: 0;
+    padding: 0;
+}
+#painel-menu .menu-principal li, .MenuZ .menu-principal li {
+    margin-bottom: 6px 0;
+}
+#painel-menu .menu-principal a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    background-color: var(--cor-card);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+#painel-menu .menu-principal a:hover {
+    background-color: var(--cor-botao);
 }
