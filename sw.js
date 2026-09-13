@@ -9,7 +9,13 @@ const ASSETS_TO_CACHE = [
     './calculos.js',
     './rural.js',
     './privacidade.html',
-    './termos.html'
+    './termos.html',
+    './artigo-adubacao-npk.html',
+    './artigo-calagem-solo.html',
+    './artigo-dosagem-insumos.html',
+    './artigo-leitura-mapas.html',
+    './artigo-medicao-conversao.html',
+    './Blog.html'
 ];
 self.addEventListener('install', (event) => {
     event.waitUntil (
