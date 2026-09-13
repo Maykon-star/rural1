@@ -16,14 +16,17 @@
   </HEAD>
     <body>
         <main>
+            <div id="painel-botoes-flutuantes" class="botoes-flutuantes oculto">
              <button class="btn" id="esconder-temp" onclick="escondertemp()">🌤️</button>
             <button class="tema-DN" id="tema" onclick="alternarTema()">🌙</button>
             <button id="toggle-menu-btn" class="ferramentas-flutuante" onclick="alternarMenu()" aria-label="Abrir e fechar Menu">
                 <span class="menu-ferras">🔧</span>
             </button>
+            </div>
             <button class="menuZ" id="menu-toggle" onclick="MenuZ()" aria-label="Abrir e fechar Menu">
                 <span class="menu-icon">☰</span>
             </button>
+            <button class="BTNflu" onclick=alternarBotoesFlutuantes()>+</button>
 
         <nav class="navbar oculto">
             <ul class="menu-principal">
@@ -74,7 +77,6 @@
         <div class="oculto" id="painel-menu">
             <ul class="menu-principal">
                 <li><a href="Blog.html">Ártigo & Blog</a></li>
-                <li><button onclick="mostrarDiv('Butflu')">Botôes flutuantes</button></li>
             </ul>
         </div>
 
