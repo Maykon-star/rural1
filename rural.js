@@ -345,3 +345,8 @@ document.addEventListener('click', function(event) {
         painel.classList.add('oculto');
     }
 });
+function alternarBotoesFlutuantes() {
+  const painelFlutuante = document.getElementById('painel-botoes-flutuantes');
+  if (painelFlutuante) {
+  painelFlutuante.classList.toggle('oculto'); }
+}
