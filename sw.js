@@ -15,7 +15,14 @@ const ASSETS_TO_CACHE = [
     './artigo-dosagem-insumos.html',
     './artigo-leitura-mapas.html',
     './artigo-medicao-conversao.html',
-    './Blog.html'
+    './Blog.html',
+    './manejo-pragas.html',
+    './conservacao-solo.html',
+    './adubacao-cobertura.html',
+    './irrigacao-gotejamento.html',
+    './densidade-plantio.html',
+    './calibracao-pulverizador.html',
+    './sistemas-ilpf.html'
 ];
 self.addEventListener('install', (event) => {
     event.waitUntil (
